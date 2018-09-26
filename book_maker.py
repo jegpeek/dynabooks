@@ -25,4 +25,4 @@ def make_notebook_from_params(paramdct):
 
 
 def generate_html_from_notebook():
-    os.system('make html')
+    return os.system('make html')

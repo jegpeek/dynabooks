@@ -24,7 +24,7 @@ def hello():
             # Save the comment here.
             flash('Hello ' + name)
         else:
-            flash('All the form fields are required. ')
+            flash('Error: All the form fields are required. ')
  
     return render_template('hello.html', form=form)
  

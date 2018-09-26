@@ -19,9 +19,9 @@ import os
 
 # -- Project information -----------------------------------------------------
 
-project = 'Drizzlepac-Notebooks'
-copyright = '2018, AURA'
-author = 'DrizzlePac contributors and developers'
+project = 'dynabook'
+copyright = '2018'
+author = 'dotAstro X and the dynabook team'
 
 # The short X.Y version
 version = '0.1'
@@ -168,11 +168,10 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 #  Do the conversion of the notebooks into rst
 from convert import process_notebooks
 
-nb_tutorials_path = os.path.join('.', 'notebooks/')
+nb_tutorials_path = os.path.join('.', 'output_nbs/')
 template_path = os.path.join('.', 'notebook_template.tpl')
-rst_output_path = os.path.join('.', 'rst-notebooks')
+rst_output_path = os.path.join('.', 'output_html')
 
 processkwargs = dict(output_path=rst_output_path, template_file=template_path)
 
 process_notebooks(nb_tutorials_path, **processkwargs)
-

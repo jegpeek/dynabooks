@@ -1,5 +1,5 @@
 import flask
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 
 # App config.
 #form = Flask('formapp', static_url_path='')
@@ -26,10 +26,11 @@ def notebook_magic():
     nb_html = '<a href="{}">notebook</a>'.format(outnbfn)
     index_html = '<a href="output_html/html/index.html">html index</a>'
 
-    if genres != 0:
-        return "notebook available at {}, but html generation failed".format(nb_html)
-    else:
-        return '{}<br>{}'.format(nb_html, index_html)
+    return send_from_directory('output_hml', outnbfn)
+    #if genres != 0:
+    #    return "notebook available at {}, but html generation failed".format(nb_html)
+    #else:
+    #    return '{}<br>{}'.format(nb_html, index_html)
 
 
 if __name__ == "__main__":

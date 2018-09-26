@@ -20,12 +20,16 @@ def notebook_magic():
         cleaned_dict[k] = v
 
     outnbfn = book_maker.make_notebook_from_params(cleaned_dict)
-    assert book_maker.generate_html_from_notebook() == 0
+    genres = book_maker.generate_html_from_notebook()
+
 
     nb_html = '<a href="{}">notebook</a>'.format(outnbfn)
     index_html = '<a href="output_html/html/index.html">html index</a>'
 
-    return nb_html + '<br>' + index_html
+    if genres != 0:
+        return "notebook available at {}, but html generation failed".format(nb_html)
+    else:
+        return '{}<br>{}'.format(nb_html, index_html)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
-# Makefile for Sphinx documentation
+I# Makefile for Sphinx documentation
 #
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = build
+BUILDDIR      = output_html
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4

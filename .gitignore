@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 __pycache__/
+output_html/*
+output_nbs/*

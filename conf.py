@@ -170,7 +170,7 @@ from convert import process_notebooks
 
 nb_tutorials_path = os.path.join('.', 'output_nbs/')
 template_path = os.path.join('.', 'notebook_template.tpl')
-rst_output_path = os.path.join('.', 'output_html')
+rst_output_path = os.path.join('.', 'output_nbs')
 
 processkwargs = dict(output_path=rst_output_path, template_file=template_path)
 

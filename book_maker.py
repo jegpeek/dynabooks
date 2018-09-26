@@ -12,17 +12,17 @@ def render_parameterized_notebook(templatefn, outfn, params):
 
 
 def make_notebook_from_params(paramdct):
-    templatefn = paramdct.pop('template')
+    templatefn = os.path.join('templates', paramdct.pop('template'))
     if not os.path.exists(templatefn):
         templatefn = templatefn + '.ipynb'
 
     basename = os.path.splitext(os.path.split(templatefn)[1])[0]
-    outnbfn = os.path.join('output_nbs', basename)
+    outnbfn = os.path.join('output_nbs', basename) + '.ipynb'
 
     render_parameterized_notebook(templatefn, outnbfn, paramdct)
 
     return outnbfn
 
 
-def generate_html_from_notebook(nbfn):
-    raise NotImplementedError
+def generate_html_from_notebook():
+    os.system('make html')

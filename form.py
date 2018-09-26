@@ -13,3 +13,7 @@ def root():
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
+@app.route('/notebook-magic')
+def notebook_magic():
+    target = request.args.get('target', default=None, type=str)

@@ -1,5 +1,12 @@
 import os
 import jinja2
+import hashlib
+
+
+def sha1(filename):
+    s = hashlib.sha1()
+    s.update(filename.encode('utf-8'))
+    return s.hexdigest()
 
 
 def render_parameterized_notebook(templatefn, outfn, params):
@@ -17,7 +24,8 @@ def make_notebook_from_params(paramdct):
         templatefn = templatefn + '.ipynb'
 
     basename = os.path.splitext(os.path.split(templatefn)[1])[0]
-    outnbfn = os.path.join('output_nbs', basename) + '.ipynb'
+    basename_sha1 = basename + sha1(str(paramdct))
+    outnbfn = os.path.join('output_nbs', basename_sha1) + '.ipynb'
 
     if os.path.exists(outnbfn):
         os.unlink(outnbfn)

@@ -44,18 +44,6 @@ def notebook_magic():
     return send_from_directory('output_html/html/', outhtmlfn)
 
 
-
-    # nb_html = '<a href="{}">notebook</a>'.format(outnbfn)
-    # index_html = '<a href="output_html/html/index.html">html index</a>'
-
-
-    # return send_from_directory('output_hml', outnbfn)
-    #if genres != 0:
-    #    return "notebook available at {}, but html generation failed".format(nb_html)
-    #else:
-    #    return '{}<br>{}'.format(nb_html, index_html)
-
-
 if __name__ == "__main__":
     app.debug = True
     app.run()

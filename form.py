@@ -12,11 +12,11 @@ def root():
 
 @app.route("/_images/<path:path>")
 def uimages(path):
-    return send_from_directory('_images', path)
+    return send_from_directory('output_html/html/_images', path)
 
 @app.route("/_static/<path:path>")
 def ustatic(path):
-    return send_from_directory('static', path)
+    return send_from_directory('output_html/html/_static', path)
 
 @app.route("/output_nbs/<path:path>")
 def output_nbs(path):

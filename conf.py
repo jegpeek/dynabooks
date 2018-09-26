@@ -166,6 +166,8 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 
 #  Do the conversion of the notebooks into rst
+import sys
+sys.path.append('.')
 from convert import process_notebooks
 
 nb_tutorials_path = os.path.join('.', 'output_nbs/')

@@ -22,11 +22,19 @@ def notebook_magic():
     outnbfn = book_maker.make_notebook_from_params(cleaned_dict)
     genres = book_maker.generate_html_from_notebook()
 
+    if genres != 0:
+        return 'nb generation failed!'
 
-    nb_html = '<a href="{}">notebook</a>'.format(outnbfn)
-    index_html = '<a href="output_html/html/index.html">html index</a>'
+    outhtmlfn = outnbfn.replace('.ipynb', '.html')
+    return send_from_directory('output_html/html/', outhtmlfn)
 
-    return send_from_directory('output_hml', outnbfn)
+
+
+    # nb_html = '<a href="{}">notebook</a>'.format(outnbfn)
+    # index_html = '<a href="output_html/html/index.html">html index</a>'
+
+
+    # return send_from_directory('output_hml', outnbfn)
     #if genres != 0:
     #    return "notebook available at {}, but html generation failed".format(nb_html)
     #else:

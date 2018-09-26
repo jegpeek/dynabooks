@@ -12,22 +12,25 @@
  
 <div class="container">
  
- 
-  <h2>Auto Kepler Light-Curve Form</h2>
-  <form  action="" method="get" role="form" action="notebook-magic">
-    <div class="form-group">
-      <label for="name">Target ID:</label>
-      <input type="text" class="form-control" id="target" name="target" placeholder="KIC 8462852">
-      <br>
-      <select id="tempate" name="template">
-        <option value="HSLA">Hubble Spectroscopic Legacy Archive</option>
-        <option value="KEXV">Kepler Exo-planet Vetting</option>
-        <option value="KQL">Kepler Quicklook</option>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
- 
+  <h2>Create a data exploration notebook!</h2>
+
+  <div style="max-width: 400px;">
+      <form method="get" role="form" action="notebook_magic">
+        <div class="form-group">
+          <label for="name">Target ID:</label>
+          <input type="text" class="form-control" name="TARGETID" placeholder="KIC 8462852">
+          <br>
+          <label for="template">Template:</label>
+          <select id="tempate" name="template" class="form-control">
+            <option value="kepler-quicklook-notebook-template.ipynb">Kepler Quicklook</option>
+            <option value="HSLA">Hubble Spectroscopic Legacy Archive</option>
+            <option value="KEXV">Kepler Exo-planet Vetting</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Create a notebook</button>
+      </form>
+   </div>
+
   <br>
  
 </div>

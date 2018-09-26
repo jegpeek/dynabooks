@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>Reusable Form Demo</title>
+        <title>Auto Notebook Tutorial</title>
        <link rel="stylesheet" media="screen" href ="bootstrap.min.css">
        <link rel="stylesheet" href="bootstrap-theme.min.css">
        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
@@ -16,8 +16,14 @@
   <h2>Auto Kepler Light-Curve Form</h2>
   <form  action="" method="get" role="form" action="notebook-magic">
     <div class="form-group">
-      <label for="name">Kepler Target ID:</label>
+      <label for="name">Target ID:</label>
       <input type="text" class="form-control" id="target" name="target" placeholder="KIC 8462852">
+      <br>
+      <select id="tempate" name="template">
+        <option value="HSLA">Hubble Spectroscopic Legacy Archive</option>
+        <option value="KEXV">Kepler Exo-planet Vetting</option>
+        <option value="KQL">Kepler Quicklook</option>
+      </select>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>

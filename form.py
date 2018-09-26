@@ -1,32 +1,15 @@
-from flask import Flask, render_template, flash, request
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+import flask
+from flask import Flask, request
  
 # App config.
+#form = Flask('formapp', static_url_path='')
 DEBUG = True
-app = Flask(__name__)
-app.config.from_object(__name__)
-app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
+app = Flask(__name__, static_url_path='')
  
-class ReusableForm(Form):
-    name = TextField('Name:', validators=[validators.required()])
- 
- 
-@app.route("/", methods=['GET', 'POST'])
-def hello():
-    form = ReusableForm(request.form)
- 
-    print form.errors
-    if request.method == 'POST':
-        name=request.form['name']
-        print name
- 
-        if form.validate():
-            # Save the comment here.
-            flash('Hello ' + name)
-        else:
-            flash('Error: All the form fields are required. ')
- 
-    return render_template('hello.html', form=form)
+@app.route("/")
+def root():
+    return app.send_static_file('index.html')
  
 if __name__ == "__main__":
+    app.debug = True
     app.run()

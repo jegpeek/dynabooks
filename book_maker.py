@@ -19,6 +19,8 @@ def make_notebook_from_params(paramdct):
     basename = os.path.splitext(os.path.split(templatefn)[1])[0]
     outnbfn = os.path.join('output_nbs', basename) + '.ipynb'
 
+    if os.path.exists(outnbfn):
+        os.unlink(outnbfn)
     render_parameterized_notebook(templatefn, outnbfn, paramdct)
 
     return outnbfn
